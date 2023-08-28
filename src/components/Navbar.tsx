@@ -1,13 +1,34 @@
-import { Button, Flex, Image, Spacer, Text, Stack, useMediaQuery, useDisclosure, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Divider, Box } from '@chakra-ui/react';
+import { Button, Flex, Image, Spacer, Text, Stack, useMediaQuery, useDisclosure, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Divider, Box, VStack } from '@chakra-ui/react';
 import logo from '../assets/logo.assets.jpg';
 import { IoMdExit } from 'react-icons/io';
 import { BsChevronDown, BsGearFill } from 'react-icons/bs';
 import React from 'react';
+import { AiOutlineDashboard } from 'react-icons/ai';
+import { SiApplearcade } from 'react-icons/si';
+import { TbBuildingStore } from 'react-icons/tb';
 
 export function Navbar() {
-    const [ isLargerThan800 ] = useMediaQuery('(min-width: 800px)');
+    const [ isLargerThan800 ] = useMediaQuery('(min-width: 480px)');
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef<HTMLButtonElement>(null)
+
+    const buttons = [
+        {
+            name: 'Dashboard',
+            path: 'dashboard',
+            type: 'dashboard',
+        },
+        {
+            name: 'Stores',
+            path: 'products',
+            type: 'products',
+        },
+        {
+            name: 'Terminals',
+            path: 'vendors',
+            type: 'vendors',
+        },
+    ];
 
     return (
         <Stack
@@ -21,7 +42,7 @@ export function Navbar() {
             height={'9vh'}
             px={'1rem'}
             py={'0.5rem'}
-            justifyContent={["space-between", "space-beetween", "space-beetween", "center"]}
+            justifyContent={["space-between", "space-beetween", "center", "center"]}
         >
             <Image boxSize={['35px', '45px', '55px', '65px']} src={logo} />
             <Text
@@ -40,7 +61,7 @@ export function Navbar() {
                             w="full"
                             _hover={{ color: 'gray.400', bg: 'gray.200' }}
                             color="white"
-                            display={['none', 'none', 'flex', 'flex']}
+                            display={['none', 'flex', 'flex', 'flex']}
                             fontStyle="italic"
                             rightIcon={<IoMdExit size={'25'} />}
                             variant="ghost"
@@ -79,11 +100,41 @@ export function Navbar() {
                             <DrawerBody>
                                 <Box textAlign="center">
                                     <Text
-                                        as="b"
+                                        as="u"
                                         fontSize={['16px', '18px', '20.8px']}
                                     >
                                         Navigation
                                     </Text>
+                                    <Box pt={5}>
+
+                                            {buttons.map((button, index) => (
+                                                <Button
+                                                    key={index}
+                                                    _active={{
+                                                        background: 'primary',
+                                                        textDecoration: 'underline',
+                                                    }}
+                                                    _hover={{
+                                                        background: 'primary',
+                                                        textDecoration: 'underline',
+                                                    }}
+                                                    fontSize={['20px', '18px', '16px', '14px']}
+                                                    variant="ghost"
+                                                    width={'100%'}
+                                                    mt={1}
+                                                    leftIcon={button.name === 'Dashboard' ? (
+                                                        <AiOutlineDashboard />
+                                                        ) : button.name === 'Stores' ? (
+                                                        <TbBuildingStore />
+                                                        ) : button.name === 'Terminals' ? (
+                                                        <SiApplearcade />
+                                                    ): <SiApplearcade />}
+                                                    onClick={() => {window.location.reload()}}
+                                                    >
+                                                    <Text>{button.name}</Text>
+                                                </Button>
+                                             ))}
+                                    </Box>
                                 </Box>
                             </DrawerBody>
                             <Divider />

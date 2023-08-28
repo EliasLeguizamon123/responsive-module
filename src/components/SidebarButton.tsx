@@ -85,7 +85,7 @@ export function SidebarButton(pathButtons: PathButton) {
                                     <SiApplearcade color="#fff" />
                                     ): null}
 
-                        <Box display={['none', 'none', 'flex', 'flex']} height={'100%'} textAlign="left" color="white" width={'100%'}>
+                        <Box height={'100%'} width={'100%'}>
                             <Text>{pathButtons.name}</Text>
                         </Box>
                     </Flex>
