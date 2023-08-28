@@ -1,13 +1,11 @@
-import { Button, Flex, Image, Spacer, Text, Stack, useMediaQuery, useDisclosure, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay } from '@chakra-ui/react';
+import { Button, Flex, Image, Spacer, Text, Stack, useMediaQuery, useDisclosure, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Divider, Box } from '@chakra-ui/react';
 import logo from '../assets/logo.assets.jpg';
 import { IoMdExit } from 'react-icons/io';
 import { BsChevronDown, BsGearFill } from 'react-icons/bs';
-import DrawerMenu from './DrawerMenu';
 import React from 'react';
 
 export function Navbar() {
     const [ isLargerThan800 ] = useMediaQuery('(min-width: 800px)');
-    const [ isLargerThan478 ] = useMediaQuery('(min-width: 478px)');
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef<HTMLButtonElement>(null)
 
@@ -76,17 +74,26 @@ export function Navbar() {
                         <DrawerOverlay />
                         <DrawerContent>
                             <DrawerCloseButton />
-                            <DrawerHeader>Menu</DrawerHeader>
+                            <DrawerHeader textAlign="center">Menu</DrawerHeader>
+                            <Divider />
                             <DrawerBody>
-
+                                <Box textAlign="center">
+                                    <Text
+                                        as="b"
+                                        fontSize={['16px', '18px', '20.8px']}
+                                    >
+                                        Navigation
+                                    </Text>
+                                </Box>
                             </DrawerBody>
+                            <Divider />
                             <DrawerFooter>
-                                <Button variant="submit">Sign out</Button>
+                                <Button w="full" variant="submit" onClick={onClose}>Sign out</Button>
                             </DrawerFooter>
                         </DrawerContent>
                     </Drawer>
                 </>
-            ) }
+            )}
              
         </Stack>
     );

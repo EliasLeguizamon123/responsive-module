@@ -67,7 +67,7 @@ export default function ListTableMD() {
     },
 ]
     return (
-        <TableContainer w="full" minW="150px" maxW="810px">
+        <TableContainer w="full" minW="150px">
             <Table variant="list" size="md">
                 <TableCaption>List of stores normal size</TableCaption>
                 <Thead bgColor="primary"position="sticky">
