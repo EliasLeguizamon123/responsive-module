@@ -15,6 +15,7 @@ function App() {
 		flexDirection="column"
 		justifyContent="center" 
 		alignItems="center"
+		overflowX={'hidden'}
 	>
 		<Box h="100vh" w="100vw">
 			<Navbar />
