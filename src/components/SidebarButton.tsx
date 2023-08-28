@@ -86,7 +86,7 @@ export function SidebarButton(pathButtons: PathButton) {
                                     ): null}
 
                         <Box height={'100%'} width={'100%'}>
-                            <Text>{pathButtons.name}</Text>
+                            <Text color="white">{pathButtons.name}</Text>
                         </Box>
                     </Flex>
                 </Button>
