@@ -68,7 +68,7 @@ export default function ListTable() {
     },
 ]
     return (
-        <TableContainer w="full" minW="150px" maxW="810px">
+        <TableContainer minW="150px" w="full">
             <Table variant="list" size="sm">
                 <TableCaption>List of stores small size</TableCaption>
                 <Thead bgColor="primary"position="sticky">

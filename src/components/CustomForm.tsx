@@ -24,11 +24,12 @@ export default function CustomForm () {
                 } 
                 onSubmit={(values) => alert(JSON.stringify(values, null, 2))}
             >
-                <Form>
+                <Form style={{width: '100%'}}>
                     <Grid 
                         templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(2, 1fr)','repeat(3, 1fr)']}
                         gap={6}
                         p={2}
+                        w="full"
                         minW="150px"
                     >
                         <GridItem>

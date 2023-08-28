@@ -12,6 +12,7 @@ const MainCardCustom = (prop: MainCard) => {
                 direction={'column'}
                 justify={'center'}
                 ml={'0rem'}
+                w="full"
                 mt={'2rem'}
             >
                 <VStack
@@ -22,6 +23,7 @@ const MainCardCustom = (prop: MainCard) => {
                     boxShadow="lg"
                     justify={'center'}
                     maxW="80vw"
+                    w="full"
                     minW={['2xs', '2xs', 'xl', 'xl']}
                     overflow="auto"
                 >
