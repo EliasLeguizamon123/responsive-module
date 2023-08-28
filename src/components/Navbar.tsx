@@ -1,4 +1,4 @@
-import { Button, Flex, Image, Spacer, Text, Stack, useMediaQuery, useDisclosure, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Divider, Box, VStack } from '@chakra-ui/react';
+import { Button, Flex, Image, Spacer, Text, Stack, useMediaQuery, useDisclosure, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Divider, Box } from '@chakra-ui/react';
 import logo from '../assets/logo.assets.jpg';
 import { IoMdExit } from 'react-icons/io';
 import { BsChevronDown, BsGearFill } from 'react-icons/bs';
