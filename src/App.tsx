@@ -10,30 +10,27 @@ import { Sidebar } from "./components/Sidebar"
 function App() {
 
   return (
-	<Box minH="100vh"
-		display="flex"
+	<Box 
+		minH="100vh"
 		flexDirection="column"
-		justifyContent="center" 
-		alignItems="center"
-		overflowX={'hidden'}
+		overflow={'hidden'}
+		display="flex"
+		w="100vw"
+		maxH="100vh"
 	>
-		<Box h="100vh" w="100vw">
 			<Navbar />
-			<Flex>
-
-			<Sidebar />
-			<VStack  spacing="2rem" w="full">
-				<CustomForm />
-				<MainCardCustom>
-					<ListTable />
-				</MainCardCustom>
-				<MainCardCustom>
-					<ListTableMD />
-				</MainCardCustom>
-			</VStack>
-			<br/>
+			<Flex pt="max(10vh, 60px)" h="full" maxH="100vh">
+				<Sidebar />
+				<VStack spacing="2rem" w="full" h="91vh" overflow="auto">
+					<CustomForm />
+					<MainCardCustom>
+						<ListTable />
+					</MainCardCustom>
+					<MainCardCustom>
+						<ListTableMD />
+					</MainCardCustom>
+				</VStack>
 			</Flex>
-		</Box>
 	</Box>
   )
 }

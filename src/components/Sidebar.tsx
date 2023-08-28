@@ -18,8 +18,25 @@ export function Sidebar() {
             name: 'Terminals',
             path: 'vendors',
             type: 'vendors',
+        },{
+            name: 'Terminals',
+            path: 'vendors',
+            type: 'vendors',
+        },{
+            name: 'Terminals',
+            path: 'vendors',
+            type: 'vendors',
+        },{
+            name: 'Terminals',
+            path: 'vendors',
+            type: 'vendors',
+        },{
+            name: 'Terminals',
+            path: 'vendors',
+            type: 'vendors',
         },
     ];
+
     return (
         <Flex
             bg="sidebar"
@@ -28,7 +45,8 @@ export function Sidebar() {
             display={['none', 'flex', 'flex', 'flex']}
             fontSize={'1rem'}
             gap={'0.25rem'}
-            h={'auto'}
+            h={'91vh'}
+            overflow="auto"
             py="1.5rem"
             w={["4rem", "6rem", "10rem", "12rem"]}
         >

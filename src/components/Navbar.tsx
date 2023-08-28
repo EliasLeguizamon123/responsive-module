@@ -1,4 +1,4 @@
-import { Button, Flex, Image, Spacer, Text, Stack, useMediaQuery, useDisclosure, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Divider, Box } from '@chakra-ui/react';
+import { Button, Flex, Image, Spacer, Text, useMediaQuery, useDisclosure, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Divider, Box } from '@chakra-ui/react';
 import logo from '../assets/logo.assets.jpg';
 import { IoMdExit } from 'react-icons/io';
 import { BsChevronDown, BsGearFill } from 'react-icons/bs';
@@ -31,7 +31,7 @@ export function Navbar() {
     ];
 
     return (
-        <Stack
+        <Flex
             align={'center'}
             bgColor="primary"
             color="white"
@@ -40,6 +40,10 @@ export function Navbar() {
             fontSize={'1.3rem'}
             minH={['50px', '60px']}
             height={'9vh'}
+            top={'0'}
+            zIndex="1000"
+            w="100vw"
+            position="fixed"
             px={'1rem'}
             py={'0.5rem'}
             justifyContent={["space-between", "space-beetween", "center", "center"]}
@@ -146,7 +150,7 @@ export function Navbar() {
                 </>
             )}
              
-        </Stack>
+        </Flex>
     );
 }
 
