@@ -3,32 +3,14 @@ import logo from '../assets/logo.assets.jpg';
 import { IoMdExit } from 'react-icons/io';
 import { BsChevronDown, BsGearFill } from 'react-icons/bs';
 import React from 'react';
-import { AiOutlineDashboard } from 'react-icons/ai';
-import { SiApplearcade } from 'react-icons/si';
-import { TbBuildingStore } from 'react-icons/tb';
+import { AiOutlineBars } from 'react-icons/ai';
+import DrawerNavigation from './NavigationDrawer';
 
 export function Navbar() {
     const [ isLargerThan800 ] = useMediaQuery('(min-width: 480px)');
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const disc2 = useDisclosure();
     const btnRef = React.useRef<HTMLButtonElement>(null)
-
-    const buttons = [
-        {
-            name: 'Dashboard',
-            path: 'dashboard',
-            type: 'dashboard',
-        },
-        {
-            name: 'Stores',
-            path: 'products',
-            type: 'products',
-        },
-        {
-            name: 'Terminals',
-            path: 'vendors',
-            type: 'vendors',
-        },
-    ];
 
     return (
         <Flex
@@ -48,6 +30,21 @@ export function Navbar() {
             py={'0.5rem'}
             justifyContent={["space-between", "space-beetween", "center", "center"]}
         >
+            <Box>
+                <Button
+                    _hover={{ color: 'gray.400', bg: 'gray.200' }}
+                    color="white"
+                    display={['flex', 'none', 'none', 'none']}
+                    fontStyle="italic"
+                    variant="ghost"
+                    onClick={() => {
+                        disc2.onOpen();
+                    }}
+                    >
+                    <AiOutlineBars size="25" />
+                </Button>
+                <DrawerNavigation isOpen={disc2.isOpen} onClose={disc2.onClose} />
+            </Box>
             <Image boxSize={['35px', '45px', '55px', '65px']} src={logo} />
             <Text
                 as="b"
@@ -111,33 +108,7 @@ export function Navbar() {
                                     </Text>
                                     <Box pt={5}>
 
-                                            {buttons.map((button, index) => (
-                                                <Button
-                                                    key={index}
-                                                    _active={{
-                                                        background: 'primary',
-                                                        textDecoration: 'underline',
-                                                    }}
-                                                    _hover={{
-                                                        background: 'primary',
-                                                        textDecoration: 'underline',
-                                                    }}
-                                                    fontSize={['20px', '18px', '16px', '14px']}
-                                                    variant="ghost"
-                                                    width={'100%'}
-                                                    mt={1}
-                                                    leftIcon={button.name === 'Dashboard' ? (
-                                                        <AiOutlineDashboard />
-                                                        ) : button.name === 'Stores' ? (
-                                                        <TbBuildingStore />
-                                                        ) : button.name === 'Terminals' ? (
-                                                        <SiApplearcade />
-                                                    ): <SiApplearcade />}
-                                                    onClick={() => {window.location.reload()}}
-                                                    >
-                                                    <Text>{button.name}</Text>
-                                                </Button>
-                                             ))}
+                                            MENU ..
                                     </Box>
                                 </Box>
                             </DrawerBody>
