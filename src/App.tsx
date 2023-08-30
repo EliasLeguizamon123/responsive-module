@@ -13,15 +13,15 @@ function App() {
 	<Box 
 		minH="100vh"
 		flexDirection="column"
-		overflow={'hidden'}
+		overflow={'auto'}
 		display="flex"
 		w="100vw"
 		maxH="100vh"
 	>
 			<Navbar />
-			<Flex pt="max(9vh, 60px)" h="full" maxH="100vh">
+			<Flex pt="max(9vh, 60px)" h="full" maxH="101vh" overflow="hidden">
 				<Sidebar />
-				<VStack spacing="2rem" w="full" h="90vh" overflow="auto" pb={8}>
+				<VStack spacing="2rem" w="full" h="90vh" paddingBottom={2} maxH="100vh" pb={12} overflow="auto">
 					<CustomForm />
 					<MainCardCustom>
 						<ListTable />
