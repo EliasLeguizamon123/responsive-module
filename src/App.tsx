@@ -21,7 +21,7 @@ function App() {
 			<Navbar />
 			<Flex pt="max(9vh, 60px)" h="full" maxH="101vh" overflow="hidden">
 				<Sidebar />
-				<VStack spacing="2rem" w="full" h="90vh" paddingBottom={2} maxH="100vh" pb={12} overflow="auto">
+				<VStack spacing="2rem" w="full" h="90vh" paddingBottom={2} maxH="100vh" pb={12} overflowY="auto" overflowX="hidden">
 					<CustomForm />
 					<MainCardCustom>
 						<ListTable />
